@@ -4,6 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import model.RowBlockModel;
+import model.RowGameModel;
 import controller.RowGameController;
 
 /**
@@ -24,7 +25,7 @@ public class TestExample {
 
     @Test
     public void testNewGame() {
-        assertEquals ("1", game.gameModel.player);
+        assertEquals (RowGameModel.Player.PLAYER1, game.gameModel.getPlayer());
         assertEquals (9, game.gameModel.movesLeft);
     }
 
