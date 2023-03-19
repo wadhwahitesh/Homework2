@@ -26,9 +26,11 @@ public class ComponentA implements View{
             for (int column = 0; column < 3; column++) {
                 blocks[row][column] = new JButton();
                 blocks[row][column].setPreferredSize(new Dimension(75, 75));
+                blocks[row][column].setEnabled(false);
                 game.add(blocks[row][column]);
                 blocks[row][column].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        JButton but = (JButton) e.getSource();
                         controller.move((JButton) e.getSource());
                     }
                 });

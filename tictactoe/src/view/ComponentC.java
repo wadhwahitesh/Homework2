@@ -22,6 +22,7 @@ public class ComponentC implements View{
 
         messages.add(playerturn);
         playerturn.setText("Player 1 to play 'X'");
+        playerturn.setEditable(false);
     }
 
     public void update(RowGameModel model){

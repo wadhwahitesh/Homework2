@@ -76,6 +76,6 @@ public class RowBlockModel
      */
     public void reset() {
 	this.contents = "";
-	this.isLegalMove = false;
+	this.isLegalMove = true;
     }
 }
