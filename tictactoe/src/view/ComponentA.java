@@ -36,6 +36,7 @@ public class ComponentA implements View{
                 blocks[row][column] = new JButton();
                 blocks[row][column].setPreferredSize(new Dimension(75, 75));
                 blocks[row][column].setEnabled(false);
+                blocks[row][column].setFocusable(false);
                 buttonMaps.put(blocks[row][column], new Integer[] {row, column});
                 game.add(blocks[row][column]);
                 blocks[row][column].addActionListener(new ActionListener() {
