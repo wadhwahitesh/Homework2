@@ -16,6 +16,13 @@ public class ComponentA implements View{
 
     Map<JButton, Integer[] > buttonMaps = new HashMap<JButton, Integer[]>();
 
+
+    /**
+     * Initialises component A
+     * 
+     * @param gui the UI where the component will be added
+     * @param controller for passing the action listener method
+     */
     public ComponentA(JFrame gui, RowGameController controller){
         JPanel gamePanel = new JPanel(new FlowLayout());
         JPanel game = new JPanel(new GridLayout(3, 3));
@@ -38,8 +45,13 @@ public class ComponentA implements View{
                 });
             }
         }
-}    
+}
 
+/**
+ * updated component A based on the model
+ * 
+ * @param gameModel current state of the game
+ */
 public void update(RowGameModel gameModel) {
     for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {

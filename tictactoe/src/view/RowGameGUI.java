@@ -68,14 +68,6 @@ public class RowGameGUI implements View{
 
     }
 
-    /**
-     * Updates the block at the given row and column 
-     * after one of the player's moves.
-     *
-     * @param gameModel The RowGameModel containing the block
-     * @param row The row that contains the block
-     * @param column The column that contains the block
-     */
     // public void updateBlock(RowGameModel gameModel, int row, int column) {
 	// blocks[row][column].setText(gameModel.blocksData[row][column].getContents());
 	// blocks[row][column].setEnabled(gameModel.blocksData[row][column].getIsLegalMove());

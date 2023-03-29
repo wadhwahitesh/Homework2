@@ -37,6 +37,9 @@ public class RowBlockModel
 	this.reset();
     }
 
+    /**
+     * @return returns the reference to the game
+     */
     public RowGameModel getGame() {
 	return this.game;
     }
@@ -63,10 +66,20 @@ public class RowBlockModel
 	return this.contents;
     }
 
+    /**
+     * Sets if the block can be played
+     * 
+     * @param isLegalMove true or false
+     */
     public void setIsLegalMove(boolean isLegalMove) {
 	this.isLegalMove = isLegalMove;
     }
 
+    /**
+     * returns if the block is legal to play
+     * 
+     * @return True or false indicating if the block can be played
+     */
     public boolean getIsLegalMove() {
 	return this.isLegalMove;
     }

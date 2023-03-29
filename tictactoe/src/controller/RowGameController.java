@@ -43,7 +43,7 @@ public class RowGameController {
     /**
      * Moves the current player into the given block.
      *
-     * @param block The block to be moved to by the current player
+     * @param index The index of the block be moved to by the current player
      */
     public void move(Integer[] index) {
 	gameModel.movesLeft--;
@@ -124,6 +124,7 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+				gameView.update(gameModel);
 			//componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
@@ -171,6 +172,7 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+				gameView.update(gameModel);
 			//componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
