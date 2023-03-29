@@ -1,1 +1,3 @@
-This repository provides resources for the CS520 course.
+## Submitted by Hitesh Wadhwa
+
+### Collaborators Anchal Gupta
