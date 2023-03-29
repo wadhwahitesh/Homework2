@@ -4,10 +4,10 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 import model.RowGameModel;
 import controller.RowGameController;
@@ -22,8 +22,10 @@ public class RowGameGUI implements View{
     public JButton reset = new JButton("Reset");
     //public JTextArea playerturn = new JTextArea();
 
-    public View componentA;
-    public View componentC;
+    ArrayList<View> components = new ArrayList<View>();
+
+    
+
 
     /**
      * Creates a new game initializing the GUI.
@@ -33,14 +35,17 @@ public class RowGameGUI implements View{
         gui.setSize(new Dimension(500, 350));
         gui.setResizable(true);
 
-        componentA = new ComponentA(gui, controller);
+
+
+        components.add(new ComponentA(gui, controller));
         
 
         // JPanel gamePanel = new JPanel(new FlowLayout());
         // JPanel game = new JPanel(new GridLayout(3,3));
         // gamePanel.add(game, BorderLayout.CENTER);
 
-        componentC = new ComponentC(gui);
+        components.add(new ComponentC(gui));
+
 
         JPanel options = new JPanel(new FlowLayout());
         options.add(reset);
@@ -77,18 +82,11 @@ public class RowGameGUI implements View{
     // }
 
     public void update(RowGameModel model) {
-        componentA.update(model);
-        componentC.update(model);
 
+        for(View v: components)
+            v.update(model);
     }
 
-    public ComponentA getA(){
-        return (ComponentA)componentA;
-    }
-
-    public ComponentC getC() {
-        return (ComponentC) componentC;
-    }
 
 
 }

@@ -3,16 +3,18 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 
 import model.RowGameModel;
 import controller.RowGameController;
 
 public class ComponentA implements View{
     public JButton[][] blocks = new JButton[3][3];
+
+    Map<JButton, Integer[] > buttonMaps = new HashMap<JButton, Integer[]>();
 
     public ComponentA(JFrame gui, RowGameController controller){
         JPanel gamePanel = new JPanel(new FlowLayout());
@@ -27,20 +29,16 @@ public class ComponentA implements View{
                 blocks[row][column] = new JButton();
                 blocks[row][column].setPreferredSize(new Dimension(75, 75));
                 blocks[row][column].setEnabled(false);
+                buttonMaps.put(blocks[row][column], new Integer[] {row, column});
                 game.add(blocks[row][column]);
                 blocks[row][column].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        controller.move((JButton) e.getSource());
+                        controller.move(buttonMaps.get((JButton) e.getSource()));
                     }
                 });
             }
         }
 }    
-
-public void updateBlock(RowGameModel gameModel, int row, int column) {
-    blocks[row][column].setText(gameModel.blocksData[row][column].getContents());
-    blocks[row][column].setEnabled(gameModel.blocksData[row][column].getIsLegalMove());
-}
 
 public void update(RowGameModel gameModel) {
     for (int row = 0; row < 3; row++) {
