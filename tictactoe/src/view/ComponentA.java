@@ -30,7 +30,6 @@ public class ComponentA implements View{
                 game.add(blocks[row][column]);
                 blocks[row][column].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        JButton but = (JButton) e.getSource();
                         controller.move((JButton) e.getSource());
                     }
                 });
@@ -43,7 +42,19 @@ public void updateBlock(RowGameModel gameModel, int row, int column) {
     blocks[row][column].setEnabled(gameModel.blocksData[row][column].getIsLegalMove());
 }
 
-public void update(RowGameModel model) {
+public void update(RowGameModel gameModel) {
+    for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
+
+                blocks[row][column].setText(gameModel.blocksData[row][column].getContents());
+                blocks[row][column].setEnabled(gameModel.blocksData[row][column].getIsLegalMove());
+
+
+
+            }
+
+        }
+
 
 }
 }

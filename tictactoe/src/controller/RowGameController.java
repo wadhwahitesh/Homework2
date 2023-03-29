@@ -36,7 +36,8 @@ public class RowGameController {
             for(int column = 0; column<3 ;column++) {
 	        gameModel.blocksData[row][column].setContents("");
 		gameModel.blocksData[row][column].setIsLegalMove(true);
-		componentA.updateBlock(gameModel,row,column);
+
+		componentA.updateBlock(gameModel, row, column);
             }
         }
     }
@@ -59,7 +60,9 @@ public class RowGameController {
 	    if(block==componentA.blocks[0][0]) {
 		gameModel.blocksData[0][0].setContents("X");
 		gameModel.blocksData[0][0].setIsLegalMove(false);
-		componentA.updateBlock(gameModel,0,0);
+		gameView.update(gameModel);
+		//componentA.updateBlock(gameModel,0,0);
+		
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
 		    if((gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
@@ -74,12 +77,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+				gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[0][1]) {
 		gameModel.blocksData[0][1].setContents("X");
 		gameModel.blocksData[0][1].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,0,1);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -93,12 +98,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+				gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[0][2]) {
 		gameModel.blocksData[0][2].setContents("X");
 		gameModel.blocksData[0][2].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,0,2);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -120,6 +127,7 @@ public class RowGameController {
 	    } else if(block==componentA.blocks[1][0]) {
 		gameModel.blocksData[1][0].setContents("X");
 		gameModel.blocksData[1][0].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,1,0);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -133,12 +141,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[1][1]) {
 		gameModel.blocksData[1][1].setContents("X");
 		gameModel.blocksData[1][1].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,1,1);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -162,6 +172,7 @@ public class RowGameController {
 	    } else if(block==componentA.blocks[1][2]) {
 		gameModel.blocksData[1][2].setContents("X");
 		gameModel.blocksData[1][2].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,1,2);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -175,12 +186,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[2][0]) {
 		gameModel.blocksData[2][0].setContents("X");
 		gameModel.blocksData[2][0].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,2,0);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -196,12 +209,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[2][1]) {
 		gameModel.blocksData[2][1].setContents("X");
 		gameModel.blocksData[2][1].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,2,1);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -215,12 +230,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[2][2]) {
 		gameModel.blocksData[2][2].setContents("X");
 		gameModel.blocksData[2][2].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,2,2);
 		gameModel.setPlayer(Player.PLAYER2);
 		if(gameModel.movesLeft<7) {
@@ -236,6 +253,7 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
@@ -245,6 +263,7 @@ public class RowGameController {
 	    if(block==componentA.blocks[0][0]) {
 		gameModel.blocksData[0][0].setContents("O");
 		gameModel.blocksData[0][0].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,0,0);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -260,12 +279,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[0][1]) {
 		gameModel.blocksData[0][1].setContents("O");
 		gameModel.blocksData[0][1].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,0,1);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -279,12 +300,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[0][2]) {
 		gameModel.blocksData[0][2].setContents("O");
 		gameModel.blocksData[0][2].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,0,2);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -300,12 +323,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[1][0]) {
 		gameModel.blocksData[1][0].setContents("O");
 		gameModel.blocksData[1][0].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,1,0);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -319,12 +344,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[1][1]) {
 		gameModel.blocksData[1][1].setContents("O");
 		gameModel.blocksData[1][1].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,1,1);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -342,12 +369,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[1][2]) {
 		gameModel.blocksData[1][2].setContents("O");
 		gameModel.blocksData[1][2].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,1,2);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -361,12 +390,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[2][0]) {
 		gameModel.blocksData[2][0].setContents("O");
 		gameModel.blocksData[2][0].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,2,0);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -382,12 +413,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[2][1]) {
 		gameModel.blocksData[2][1].setContents("O");
 		gameModel.blocksData[2][1].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,2,1);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -401,12 +434,14 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}
 	    } else if(block==componentA.blocks[2][2]) {
 		gameModel.blocksData[2][2].setContents("O");
 		gameModel.blocksData[2][2].setIsLegalMove(false);
+		gameView.update(gameModel);
 		componentA.updateBlock(gameModel,2,2);
 		gameModel.setPlayer(Player.PLAYER1);
 		if(gameModel.movesLeft<7) {
@@ -422,6 +457,7 @@ public class RowGameController {
 			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
 		    }
 		    if (gameModel.getFinalResult() != null) {
+			gameView.update(gameModel);
 			componentC.playerturn.setText(gameModel.getFinalResult());
 		    }
 		}

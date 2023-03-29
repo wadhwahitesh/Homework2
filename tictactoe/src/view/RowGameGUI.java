@@ -77,6 +77,8 @@ public class RowGameGUI implements View{
     // }
 
     public void update(RowGameModel model) {
+        componentA.update(model);
+        componentC.update(model);
 
     }
 

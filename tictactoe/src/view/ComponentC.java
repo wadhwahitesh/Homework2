@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import model.RowGameModel;
+import model.RowGameModel.Player;
 import controller.RowGameController;
 
 public class ComponentC implements View{
@@ -26,6 +27,12 @@ public class ComponentC implements View{
     }
 
     public void update(RowGameModel model){
+
+        if (model.getPlayer() == Player.PLAYER1)
+            playerturn.setText("Player 1 to play 'X'");
+        else 
+            playerturn.setText("Player 2 to play 'O'");
+
 
     }
     
